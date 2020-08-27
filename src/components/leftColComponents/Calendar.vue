@@ -93,13 +93,13 @@ export default {
       document.onmousemove = function(e){
         var left = e.clientX - Divleft;
         var top = e.clientY - Divtop;
-        console.log(left,top);
         odiv.style.left = (left<maxleft)? left +'px' : maxleft +'px';
         odiv.style.top = (top<maxtop)? top +'px' : maxtop +'px';
       };
       document.onmouseup = function(e){
         document.onmousemove = document.onmouseup = null;
       };
+      event.stopPropagation();
     },
   },
   components:{

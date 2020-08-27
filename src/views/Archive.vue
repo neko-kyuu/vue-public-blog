@@ -24,7 +24,7 @@ export default {
   data(){
     return{
       archiveIndex: 0,
-      archiveTimeList: [{name:"AUGUST", imgUrl: require("../../src/assets/img/aug.jpg"), filter:""},
+      archiveTimeList: [{name:"AUGUST", imgUrl: require("../../src/assets/img/aug.jpg"), filter:"none"},
                         {name:"SEPTEMBER", imgUrl: require("../../src/assets/img/sep.jpg"), filter:""},
                         {name:"OCTOBER", imgUrl: require("../../src/assets/img/oct.jpg"), filter:""},
                         {name:"NOVEMBER", imgUrl: require("../../src/assets/img/nov.jpg"), filter:""},
@@ -71,7 +71,7 @@ export default {
     cursor: pointer;
   }
   .archive-box-link:hover{
-    filter:none;
+    filter: none;
   }
     .archive-box-link>a{
       position: absolute; right:12px; bottom: 6px;
@@ -79,6 +79,7 @@ export default {
       text-shadow:lightslategray 1px 0 0,lightslategray 0 1px 0,lightslategray -1px 0 0,lightslategray 0 -1px 0;
     }
 .archive-layout{
+  padding-bottom: 40px;
   width: 81%; height: 100%;
   float:right;
   background-color: rgba(255, 255, 255, 0.5);

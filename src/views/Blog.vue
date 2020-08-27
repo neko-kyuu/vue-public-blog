@@ -34,15 +34,17 @@ export default {
       titleList: [[{time:"2020-08-17 ~ 08-23"}],
                  [{time:"2020-08-01 ~ 08-14"}]],
       contentList: [["- Vue重置版",
-                     "&emsp;&emsp;此项目使用技术栈：前端Vue \\ 路由 VueRouter \\ UI框架iview",
-                     "&emsp;&emsp;\\ npm install 安装依赖 \\ "," \0 \0 \0 \0 \0 \0 \0 \0 \0",
+                     "&emsp;&emsp;此项目使用技术栈： 前端Vue \\ 路由 VueRouter \\ UI框架iview \\ 懒加载vue-lazyload",
+                     "&emsp;&emsp;\\ npm install 安装依赖 \\ ",
+                     "&emsp;&emsp;\\ npm run dev 开发环境 \\",
+                     "&emsp;&emsp;\\ npm run build 打包 \\"," \0",
                      "- iview库安装配置：",
                      "&emsp;&emsp;安装：npm install view-design --save",
                      "&emsp;&emsp;webpack 入口文件 main.js 中做如下配置：",
                      "&emsp;&emsp;&emsp;import ViewUI from 'view-design'\;",
                      "&emsp;&emsp;&emsp;import 'view-design/dist/styles/iview.css'\;",
                      "&emsp;&emsp;&emsp;Vue.use(ViewUI)\;",
-                     " \0 \0 \0 \0 \0 \0 \0 \0 \0",],
+                     " \0",],
                     ["- 个人博客初版",
                      "&emsp;&emsp;页面布局参考SAO开发笔记 \\ 配色马卡龙 主粉蓝","&emsp;&emsp;jquery 实现音乐盒暂停/播放、logo悬浮层、日志选项卡，以及图片本地上传并预览"],
       ],
@@ -70,7 +72,7 @@ export default {
 <style>
 .left-sidebar{
   width: 10%; 
-  position: absolute; left: 0; 
+  position: absolute; left: 0; z-index: 1;
   background-color: rgba(255, 228, 225, 0.7); 
 }
   .left-sidebar>ul{
