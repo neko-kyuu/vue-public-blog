@@ -31,7 +31,7 @@ export default {
       sideList: [{name:"1", id:"left-sidebar-li-1", background:"#cbebcb", transform:"translate( 1px, 0)"},
                  {name:"2", id:"left-sidebar-li-2", background:"#cbdceb", transform:""}
       ],
-      titleList: [[{time:"2020-08-17 ~ 08-23"}],
+      titleList: [[{time:"2020-08-17 ~ 08-29"}],
                  [{time:"2020-08-01 ~ 08-14"}]],
       contentList: [["- Vue重置版",
                      "&emsp;&emsp;此项目使用技术栈： 前端Vue \\ 路由 VueRouter \\ UI框架iview \\ 懒加载vue-lazyload",
