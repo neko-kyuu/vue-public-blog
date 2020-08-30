@@ -2,7 +2,7 @@
     <div id="music">
       <div class="music-header">
         <div id="music-logo"></div>
-        <audio :src="MusicList[musicIndex].src" @play="play" @pause="pause" autoplay loop controls ref="audio"></audio>
+        <audio :src="MusicList[musicIndex].src" @play="play" @pause="pause" loop controls ref="audio"></audio>
       </div>
       <div class="music-list">
         <ul>

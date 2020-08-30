@@ -7,6 +7,9 @@ import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 import Vuelazyload from 'vue-lazyload'
 import store from './store'
+import axios from 'axios'
+
+Vue.prototype.$http = axios
 
 Vue.use(ViewUI)
 Vue.config.productionTip = false

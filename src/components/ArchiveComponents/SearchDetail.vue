@@ -96,7 +96,7 @@ export default {
 
 <style scoped>
 .ivu-card>>> .highlight{
-    color: #FF6A6A;
+    color: #CD5B45; background-color: #E6E6FA;
 }
 .ivu-card{
     margin: 15px 0 15px;
@@ -110,6 +110,6 @@ export default {
     top: 6px;
 }
   .ivu-card>>> a{
-      color: lightslategray;
+      color: #4F94CD;
   }
 </style>
