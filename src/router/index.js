@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect:'/login',
+    redirect:'/home',
   },
   {
     path: '/home',
@@ -39,8 +39,18 @@ const routes = [
   },
 ]
 
-export default new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes 
 })
+
+//路由导航守卫
+router.beforeEach((to, from, next)=>{
+  if(to.path == "/login") return next();
+  const token = window.sessionStorage.getItem('token');
+  if(!token){ return next('/login'); }
+  next();
+})
+
+export default router

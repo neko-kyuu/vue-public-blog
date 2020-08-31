@@ -2,24 +2,39 @@
   <div class="login-layout">
     <div class="login-panel">
       <div class="login-form">
-        <div class="switch"> 
-          <span class="login" ref="login">登录</span>
+        <div class="switch" @click="switchPanel"> 
+          <span class="active" ref="login">登录</span>
           <span>/</span>
-          <span class="signup" ref="signup">注册</span>
+          <span ref="signup">注册</span>
         </div>
         <Form ref="formInline" :model="formInline" :rules="ruleInline" >
+          
           <FormItem prop="user">
-              <Input type="text" v-model="formInline.user" placeholder="Username">
+              <Input type="text" v-model="formInline.user" placeholder="用户名">
                   <Icon type="ios-person" slot="prepend" size="18"></Icon>
               </Input>
           </FormItem>
-          <FormItem prop="password">
-              <Input type="password" v-model="formInline.password" placeholder="Password">
+          <FormItem prop="pw">
+              <Input type="password" v-model="formInline.pw" placeholder="密码">
                   <Icon type="ios-lock" slot="prepend" size="18"></Icon>
               </Input>
           </FormItem>
-          <FormItem>
-              <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
+          <FormItem prop="pwconfirm" v-show="isSignup">
+              <Input type="password" v-model="formInline.pwconfirm" placeholder="请再次输入密码">
+                  <Icon type="ios-lock" slot="prepend" size="18"></Icon>
+              </Input>
+          </FormItem>
+          <FormItem prop="email" v-show="isSignup">
+              <Input type="text" v-model="formInline.email" placeholder="邮箱（选填）">
+                  <Icon type="ios-mail" slot="prepend" size="18"></Icon>
+              </Input>
+          </FormItem>
+
+          <FormItem v-if="!isSignup">
+              <Button type="primary" @click="handleLogin('formInline')">登录</Button>
+          </FormItem>
+          <FormItem v-if="isSignup">
+              <Button type="primary" @click="handleSignup('formInline')">注册</Button>
           </FormItem>
         </Form>
       </div>
@@ -31,18 +46,36 @@
 export default {
   name:'Login',
   data () {
+    const validatePassCheck = (rule, value, callback) => {
+      if (this.isSignup && value === '') {
+        callback(new Error('重复密码不能为空'));
+      } else if (this.isSignup && value !== this.formInline.pw) {
+        callback(new Error('两次输入的密码不一致！'));
+      } else {
+        callback();
+      }
+    };
     return {
+      isSignup: false,
       formInline: {
+        email: '',
         user: '',
-        password: ''
+        pw: '',
+        pwconfirm: '',
       },
       ruleInline: {
+        email: [
+          { required: false, trigger: 'blur' }
+        ],
         user: [
           { required: true, message: '用户名不能为空', trigger: 'blur' }
         ],
-        password: [
+        pw: [
           { required: true, message: '密码不能为空', trigger: 'blur' },
           { type: 'string', min: 6, message: '密码不能少于6位', trigger: 'blur' }
+        ],
+        pwconfirm: [
+          { validator: validatePassCheck, trigger: 'blur' }
         ]
       }
     }
@@ -52,31 +85,53 @@ export default {
     document.onkeydown = function(e){
       let key = window.event.keyCode;
       if(key == 13){
-        that.handleSubmit("formInline");
-      }
-      
+        if(!that.isSignup){
+          that.handleLogin("formInline");
+        }else{
+          that.handleSignup("formInline");
+        }
+      }  
     }
-
   },
   methods: {
-    handleSubmit(name) {
-      this.$refs[name].validate((valid) => {
-        if (!valid) {
-          this.$Message.success('用户名或密码不规范！');
-        } else {
+    handleLogin(name) {
+      this.$refs[name].validate((valid)=>{
+        if(!valid){
+          this.$Message.warn('用户名或密码不规范！');
+        }else{
           /*
             用户名和密码符合规范，判断是否允许登录
             这里先使用假数据吧，neko开头的用户名均为可登录用户，admin密码adminroot
           */
           if(this.formInline.user.substring(0,4) =="neko"){
+            window.sessionStorage.setItem('token',this.formInline.user);
             this.$router.push('/home');
-          }else if(this.formInline.user == "admin" && this.formInline.password == "adminroot"){
+          }else if(this.formInline.user == "admin" && this.formInline.pw == "adminroot"){
             console.log('admin登录成功');
           }else{
             this.$Message.error('用户名或密码不正确！');
           }
         }
       })
+    },
+    handleSignup(name) {
+      this.$refs[name].validate((valid)=>{
+        if(!valid){
+          this.$Message.warn('输入内容不规范！');
+        }else{
+          this.$Message.success('注册成功！赶快去登录吧~')
+        }
+      })
+    },
+    switchPanel() {
+      //在登录和注册panel之间切换
+      let loginPanel = this.$refs.login,
+          signupPanel = this.$refs.signup;
+      loginPanel.classList.toggle('active');
+      signupPanel.classList.toggle('active');
+      this.isSignup = !this.isSignup;
+      //重置表单
+      this.$refs.formInline.resetFields();
     }
   }
 }
@@ -98,7 +153,7 @@ export default {
   width: 80%; height: 696px;
   position: relative; left: 10%; top:120px;
   background: url(https://c-ssl.duitang.com/uploads/item/201502/22/20150222230053_nBMTn.png); 
-  background-size: cover; background-repeat: no-repeat; background-position: center -455px;
+  background-size: cover; background-repeat: no-repeat; background-position: center 48%;
   box-shadow: 0 0 6px lightslategray;
 }
 .login-form{
@@ -112,11 +167,17 @@ export default {
   }
   .ivu-form{ top: 260px;}
   .switch{
+    border-radius: 50px; border: 1px solid lightslategray;
     top: 180px;
     font-size: 20px; color: lightgray;
+    cursor: pointer;
   }
-    .login{
-      color: #bba8ff;
+    .active{
+      color: #a58cff;
+    }
+    
+    .ivu-form>>> .ivu-input{
+      background: none;
     }
     .ivu-form>>> .ivu-form-item-error-tip{
       font-size:6px; text-indent: 1em;

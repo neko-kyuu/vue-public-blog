@@ -106,6 +106,9 @@ export default {
     padding: 6px 16px 6px;
     background-color: #FFF5EE;
 }
+    .ivu-card>>> .ivu-card-head>p{
+        color:lightslategray;
+    }
 .ivu-card>>> .ivu-card-extra{
     top: 6px;
 }

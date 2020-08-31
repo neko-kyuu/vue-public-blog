@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .left-sidebar{
   width: 10%; 
   position: absolute; left: 0; z-index: 1;
@@ -104,20 +104,20 @@ export default {
     position: relative; left: 10%;
     border: 1px solid rgba(119, 136, 153, 0.6);
   }
-  .ivu-card-head{
+  .ivu-card>>> .ivu-card-head{
     height: 40px;
     background-color: rgb(183, 202, 201);
     border-bottom: 1px solid rgba(119, 136, 153, 0.6);
   }
-  .ivu-card-head>p{
+  .ivu-card>>> .ivu-card-head>p{
     padding-left: 5%; 
     color: white; font-weight: bold; text-align: left;
     position: relative; bottom: 4px;
   }
-  .ivu-card-head>p>span{
+  .ivu-card>>> .ivu-card-head>p>span{
     font-size: 12px;
   }
-  .ivu-card-body>p{
+  .ivu-card>>> .ivu-card-body>p{
     padding: 4px 0 4px;
     text-align: left; text-indent: 2em;
   }
