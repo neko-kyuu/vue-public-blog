@@ -29,7 +29,7 @@ export default {
     position: relative; top: 210px; left:10%; z-index: 1;
     border-radius: 6px;
 }
-@media (max-width:992px) {
+@media screen and (max-width:992px) {
     .calendar{
       display: none;
     }
@@ -37,5 +37,10 @@ export default {
 .archive-content{
     position: relative; top: 290px;
     font-size: 12px; font-weight: bold;
+}
+@media screen and (max-width:768px) {
+    .archive-content {
+      display: none;
+    }
 }
 </style>

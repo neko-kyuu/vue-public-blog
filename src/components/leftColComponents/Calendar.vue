@@ -1,7 +1,7 @@
 <template>
     <div id="calendar">
       <table class="calender-table" id="calender-table">
-        <caption>2020-08</caption>
+        <caption>2020-09</caption>
         <!--星期x列标签-->
         <colgroup>
           <col v-for="(item, index) in Colgroup" :key="index" :class="item.class">                           
@@ -28,7 +28,7 @@
       <transition name="cal-popup">
         <div class="calendar-popup" v-if="clickedFlag"
              @mousedown="dragDown($event)">
-          <p> Aug {{clickedDate.value}} </p>
+          <p> Sep {{clickedDate.value}} </p>
           <button @click="popupClose()"> close </button>
           <Card class="popup-card" dis-hover> 
             <Todo :clickedDate="clickedDate"/>
@@ -47,12 +47,12 @@ export default {
                 {name:"wed",class:"weekday"},{name:"thu",class:"weekday"},{name:"fri",class:"weekday"},
                 {name:"sat",class:"weekend"}],
       theadList:[{name:"日"},{name:"一"},{name:"二"},{name:"三"},{name:"四"},{name:"五"},{name:"六"}],
-      tdList:[[{class:"calender-inactive",value:"26"},{class:"calender-inactive",value:"27"},{class:"calender-inactive",value:"28"},{class:"calender-inactive",value:"29"},{class:"calender-inactive",value:"30"},{class:"calender-inactive",value:"31"},{value:"1"}],
-              [{value:"2"},{value:"3"},{value:"4"},{value:"5"},{value:"6"},{value:"7"},{value:"8"}],
-              [{value:"9"},{value:"10"},{value:"11"},{value:"12"},{value:"13"},{value:"14"},{value:"15"}],
-              [{value:"16"},{value:"17"},{value:"18"},{value:"19"},{value:"20"},{value:"21"},{value:"22"}],
-              [{value:"23"},{value:"24"},{value:"25"},{value:"26"},{value:"27"},{value:"28"},{value:"29"}],
-              [{value:"30"},{value:"31"},{class:"calender-inactive",value:"1"},{class:"calender-inactive",value:"2"},{class:"calender-inactive",value:"3"},{class:"calender-inactive",value:"4"},{class:"calender-inactive",value:"5"}]],
+      tdList:[[{class:"calender-inactive",value:"30"},{class:"calender-inactive",value:"31"},{value:"1"},{value:"2"},{value:"3"},{value:"4"},{value:"5"}],
+              [{value:"6"},{value:"7"},{value:"8"},{value:"9"},{value:"10"},{value:"11"},{value:"12"}],
+              [{value:"13"},{value:"14"},{value:"15"},{value:"16"},{value:"17"},{value:"18"},{value:"19"}],
+              [{value:"20"},{value:"21"},{value:"22"},{value:"23"},{value:"24"},{value:"25"},{value:"26"}],
+              [{value:"27"},{value:"28"},{value:"29"},{value:"30"},{class:"calender-inactive",value:"1"},{class:"calender-inactive",value:"2"},{class:"calender-inactive",value:"3"}],
+              [{class:"calender-inactive",value:"4"},{class:"calender-inactive",value:"5"},{class:"calender-inactive",value:"6"},{class:"calender-inactive",value:"7"},{class:"calender-inactive",value:"8"},{class:"calender-inactive",value:"9"},{class:"calender-inactive",value:"10"}]],
       clickedDate:[],
       clickedFlag: false,
     };

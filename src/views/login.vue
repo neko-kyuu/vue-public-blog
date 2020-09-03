@@ -167,7 +167,6 @@ export default {
   }
   .ivu-form{ top: 260px;}
   .switch{
-    border-radius: 50px; border: 1px solid lightslategray;
     top: 180px;
     font-size: 20px; color: lightgray;
     cursor: pointer;

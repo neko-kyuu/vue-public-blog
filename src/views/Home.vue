@@ -28,4 +28,9 @@ export default {
   position: absolute; left: 15px; top: 15px;
   box-shadow: 0 0 2px;
 }
+@media screen and (max-width:768px) {
+    .carousel-layout {
+      display: none;
+    }
+}
 </style>
