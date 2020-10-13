@@ -45,8 +45,9 @@
 ![image](https://github.com/neko-kyuu/vue-public-blog/blob/master/screenshots/Snipaste_2020-10-13_16-17-15.png)
 瀑布流布局，图片支持懒加载。
 
-### 其他功能
-右侧边栏包含`︿`置顶功能。
+### 其他小功能
+右侧边栏`︿`按钮具有置顶功能。
+鼠标点击时，在点击处附近有小爱心冒泡。
 
 readme存档（内容与上文一致）：
 https://neko-kyuu.github.io/2020/10/13/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2readme/
