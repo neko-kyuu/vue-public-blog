@@ -46,7 +46,7 @@ export default {
                      "&emsp;&emsp;&emsp;Vue.use(ViewUI)\;",
                      " \0",],
                     ["- 个人博客初版",
-                     "&emsp;&emsp;页面布局参考SAO开发笔记 \\ 配色马卡龙 主粉蓝","&emsp;&emsp;jquery 实现音乐盒暂停/播放、logo悬浮层、日志选项卡，以及图片本地上传并预览"],
+                     "&emsp;&emsp;页面布局参考SAO开发笔记 \\ 配色马卡龙 主粉蓝","&emsp;&emsp;jquery库 实现音乐盒暂停/播放、logo悬浮层、日志选项卡，以及图片本地上传并预览"],
       ],
       leftSideHeight:{height: ""}
     };

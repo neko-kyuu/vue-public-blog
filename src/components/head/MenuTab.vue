@@ -15,7 +15,7 @@ export default {
       return{
           inputVal:"",
           MenuList:[{name:"首页",imageURL:"ios-home",path:"/",id:"tab-1",background:""},
-                    {name:"日志&随心记",imageURL:"ios-quote-outline",path:"/blog",id:"tab-2",background:""},
+                    {name:"日志",imageURL:"ios-quote-outline",path:"/blog",id:"tab-2",background:""},
                     {name:"归档",imageURL:"ios-bookmarks-outline",path:"/archive",id:"tab-3",background:""},
                     {name:"画廊",imageURL:"ios-images-outline",path:"/gallery",id:"tab-4",background:""},
                     {name:"关于本站",imageURL:"ios-information-circle-outline",path:"/about",id:"tab-5",background:""},

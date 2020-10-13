@@ -24,7 +24,7 @@ export default {
     return{
       openDrawer : false,
       MenuList:[{name:"首页",imageURL:"ios-home",path:"/"},
-                {name:"日志&随心记",imageURL:"ios-quote-outline",path:"/blog"},
+                {name:"日志",imageURL:"ios-quote-outline",path:"/blog"},
                 {name:"归档",imageURL:"ios-bookmarks-outline",path:"/archive"},
                 {name:"画廊",imageURL:"ios-images-outline",path:"/gallery"},
                 {name:"关于本站",imageURL:"ios-information-circle-outline",path:"/about"},
