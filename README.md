@@ -1,21 +1,14 @@
 # vue个人博客
 
 > 此项目基于`vue`全家桶, UI库`iview`，响应式布局，可适配多端。
-> 博客内内容为展示用。
-
-## Setup
-
-``` bash
-# 安装依赖
-npm install
-
-# 开发模式 localhost:8080
-npm run dev
-
-# 打包
-npm run build
-
-```
+> 博客内内容主要展示用。
+主要功能：
+● 登录/注册（含登录验证）；登出
+● 音乐播放，音量控制，以及当前曲目名高亮滚动显示
+● 日历及todo list
+● 日志选项卡
+● 归档内容搜索及结果高亮
+● 瀑布流图片集
 
 ## 博客展示
 ### 登录/注册
@@ -55,5 +48,19 @@ npm run build
 ### 其他功能
 右侧边栏包含`︿`置顶功能。
 
-readme存档：
+readme存档（内容与上文一致）：
 https://neko-kyuu.github.io/2020/10/13/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2readme/
+
+## Setup
+
+``` bash
+# 安装依赖
+npm install
+
+# 开发模式 localhost:8080
+npm run dev
+
+# 打包
+npm run build
+
+```
