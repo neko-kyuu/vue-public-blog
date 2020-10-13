@@ -54,3 +54,5 @@ npm run build
 
 ### 其他功能
 右侧边栏包含`︿`置顶功能。
+
+https://neko-kyuu.github.io/2020/10/13/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2readme/
