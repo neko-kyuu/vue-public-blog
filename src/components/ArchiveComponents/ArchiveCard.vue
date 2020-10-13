@@ -47,8 +47,8 @@ export default {
             timestamp:["AUG","SEP","OCT","NOV","DEC"],
             data: [[
                     {
-                        title: 'Vue中的父子传值',
-                        description: 'vue 8/21踩坑记录',
+                        title: 'props父子组件传值',
+                        description: 'vue 8/21记录',
                         content: [
                             "在子组件标签上使用自定义属性", 
                             "<p class='p-code'> <span class='blue'> v-bind </span>: <span class='blue'> propName </span> = ' <span class='blue'> parentData </span>'</p>",
@@ -64,13 +64,9 @@ export default {
                     },
                     {
                         title: 'v-html指令',
-                        description: 'v-html指令可以解析html元素并渲染',
+                        description: '',
                         content: [
-                            "用列表渲染 &lt;p> 元素的时候，希望其中一些元素能够换行，并且添加不同的样式。",
-                            "方法一，item.text渲染文字，v-bind绑定item.sytle，非常麻烦。例如要实现一个三行文字的&lt;p>元素，并且给它一个圆角灰色背景，"+
-                                "需要分别指定每一行的样式，并且border-radius / padding / text-indent 需要单独设置。",
-                            "方法二，使用v-html实现：(&emsp 表示空格)",
-                            "<p class='p-code'> &lt;p class='p-code'> line 1 &lt;br> line 2 &lt;br> line 3 &lt;/p> </p>",
+                            "v-html指令可以解析html元素并渲染。",
                         ],
                         src: "",
                         time: "Sat Aug 22 2020 23:18:45",
@@ -95,8 +91,8 @@ export default {
                     }],
                     [
                       {
-                        title: 'Vue中的父子传值',
-                        description: 'vue 8/21踩坑记录',
+                        title: 'props父子组件传值',
+                        description: 'vue 8/21记录',
                         content: [
                             "在子组件标签上使用自定义属性", 
                             "<p class='p-code'> <span class='blue'> v-bind </span>: <span class='blue'> propName </span> = ' <span class='blue'> parentData </span>'</p>",

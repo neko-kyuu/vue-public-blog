@@ -1,6 +1,7 @@
 <template>
     <div>
-        this is the todo list. {{clickedDate.value}}
+        OCT {{clickedDate.value}}
+        todo list
     </div>
 </template>
 
